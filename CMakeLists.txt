@@ -547,7 +547,9 @@ add_library(freetype
 )
 
 # SideFX.
+if (WIN32)
 set_target_properties(freetype PROPERTIES OUTPUT_NAME hfreetype)
+endif ()
 
 target_compile_definitions(
   freetype PRIVATE FT2_BUILD_LIBRARY)
