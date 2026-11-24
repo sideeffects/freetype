@@ -535,7 +535,7 @@ endif ()
 
 
 if (NOT DISABLE_FORCE_DEBUG_POSTFIX)
-  set(CMAKE_DEBUG_POSTFIX d)
+  set(CMAKE_DEBUG_POSTFIX _d)
 endif ()
 
 
@@ -545,6 +545,9 @@ add_library(freetype
   ${PRIVATE_HEADERS}
   ${BASE_SRCS}
 )
+
+# SideFX.
+set_target_properties(freetype PROPERTIES OUTPUT_NAME hfreetype)
 
 target_compile_definitions(
   freetype PRIVATE FT2_BUILD_LIBRARY)
